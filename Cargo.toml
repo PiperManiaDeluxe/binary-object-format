@@ -2,6 +2,11 @@
 name = "binary-object-format"
 version = "1.0.0"
 edition = "2024"
+license = "MIT"
+description = "Slightly cooler JSON stored in a binary format."
+homepage = "https://github.com/PiperManiaDeluxe/binary-object-format"
+repository = "https://github.com/PiperManiaDeluxe/binary-object-format"
+readme = "README.md"
 
 [dependencies]
 thiserror = "2.0.21"
