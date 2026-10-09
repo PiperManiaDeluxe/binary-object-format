@@ -1,0 +1,10 @@
+[package]
+name = "binary-object-format"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+thiserror = "2.0.21"
+
+[dev-dependencies]
+anyhow = "1.0.104"
