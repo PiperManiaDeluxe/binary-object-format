@@ -6,8 +6,8 @@ use binary_object_format::{bof, read::read_value, write::write_value};
 fn main() -> Result<()> {
     let null_value = bof!(null);
     let bool_value = bof!(true);
-    let integer_value = bof!(42);
-    let float_value = bof!(2.22);
+    let integer_value = bof!(42i8);
+    let float_value = bof!(2.22f32);
     let string_value = bof!("I am a string!");
     let array_value = bof!([222, "I am in a array!", null]);
     let object_value = bof!({"true": true, false: "false"});

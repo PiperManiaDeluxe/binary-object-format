@@ -27,15 +27,87 @@ impl From<bool> for Value {
     }
 }
 
+impl From<Integer> for Value {
+    fn from(value: Integer) -> Self {
+        Value::Integer(value)
+    }
+}
+
+impl From<Float> for Value {
+    fn from(value: Float) -> Self {
+        Value::Float(value)
+    }
+}
+
+impl From<u8> for Value {
+    fn from(value: u8) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<u16> for Value {
+    fn from(value: u16) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<u32> for Value {
+    fn from(value: u32) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<u64> for Value {
+    fn from(value: u64) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<u128> for Value {
+    fn from(value: u128) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<i8> for Value {
+    fn from(value: i8) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<i16> for Value {
+    fn from(value: i16) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<i32> for Value {
+    fn from(value: i32) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
 impl From<i64> for Value {
     fn from(value: i64) -> Self {
-        Value::Integer(Integer::I64(value))
+        Value::Integer(value.into())
+    }
+}
+
+impl From<i128> for Value {
+    fn from(value: i128) -> Self {
+        Value::Integer(value.into())
+    }
+}
+
+impl From<f32> for Value {
+    fn from(value: f32) -> Self {
+        Value::Float(value.into())
     }
 }
 
 impl From<f64> for Value {
     fn from(value: f64) -> Self {
-        Value::Float(Float::F64(value))
+        Value::Float(value.into())
     }
 }
 

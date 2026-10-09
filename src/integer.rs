@@ -16,6 +16,73 @@ pub enum Integer {
     I128(i128),
 }
 
+pub fn to_integer<T>(value: T) -> Integer
+where
+    T: Into<Integer>,
+{
+    value.into()
+}
+
+impl From<u8> for Integer {
+    fn from(value: u8) -> Self {
+        Integer::U8(value)
+    }
+}
+
+impl From<u16> for Integer {
+    fn from(value: u16) -> Self {
+        Integer::U16(value)
+    }
+}
+
+impl From<u32> for Integer {
+    fn from(value: u32) -> Self {
+        Integer::U32(value)
+    }
+}
+
+impl From<u64> for Integer {
+    fn from(value: u64) -> Self {
+        Integer::U64(value)
+    }
+}
+
+impl From<u128> for Integer {
+    fn from(value: u128) -> Self {
+        Integer::U128(value)
+    }
+}
+
+impl From<i8> for Integer {
+    fn from(value: i8) -> Self {
+        Integer::I8(value)
+    }
+}
+
+impl From<i16> for Integer {
+    fn from(value: i16) -> Self {
+        Integer::I16(value)
+    }
+}
+
+impl From<i32> for Integer {
+    fn from(value: i32) -> Self {
+        Integer::I32(value)
+    }
+}
+
+impl From<i64> for Integer {
+    fn from(value: i64) -> Self {
+        Integer::I64(value)
+    }
+}
+
+impl From<i128> for Integer {
+    fn from(value: i128) -> Self {
+        Integer::I128(value)
+    }
+}
+
 impl Integer {
     pub const fn binary_identifier(&self) -> u8 {
         match self {

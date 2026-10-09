@@ -14,3 +14,22 @@ impl Float {
         }
     }
 }
+
+pub fn to_float<T>(value: T) -> Float
+where
+    T: Into<Float>,
+{
+    value.into()
+}
+
+impl From<f32> for Float {
+    fn from(value: f32) -> Self {
+        Float::F32(value)
+    }
+}
+
+impl From<f64> for Float {
+    fn from(value: f64) -> Self {
+        Float::F64(value)
+    }
+}
