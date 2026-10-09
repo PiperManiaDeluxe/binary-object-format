@@ -217,6 +217,6 @@ macro_rules! bof_internal {
     // Any Serialize type: numbers, strings, struct literals, variables etc.
     // Must be below every other rule.
     ($other:expr) => {
-        $crate::to_value($other)
+        $other.into()
     };
 }

@@ -28,7 +28,7 @@ where
     }
 }
 
-pub fn write_null<W>(writer: &mut W) -> Result<(), WriteError>
+fn write_null<W>(writer: &mut W) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -37,7 +37,7 @@ where
     Ok(())
 }
 
-pub fn write_bool<W>(writer: &mut W, val: &bool) -> Result<(), WriteError>
+fn write_bool<W>(writer: &mut W, val: &bool) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -49,7 +49,7 @@ where
     Ok(())
 }
 
-pub fn write_integer<W>(writer: &mut W, val: &Integer) -> Result<(), WriteError>
+fn write_integer<W>(writer: &mut W, val: &Integer) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -71,7 +71,7 @@ where
     Ok(())
 }
 
-pub fn write_float<W>(writer: &mut W, val: &Float) -> Result<(), WriteError>
+fn write_float<W>(writer: &mut W, val: &Float) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -85,7 +85,7 @@ where
     Ok(())
 }
 
-pub fn write_string<W>(writer: &mut W, val: &str) -> Result<(), WriteError>
+fn write_string<W>(writer: &mut W, val: &str) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -100,7 +100,7 @@ where
     Ok(())
 }
 
-pub fn write_array<W>(writer: &mut W, val: &Vec<Value>) -> Result<(), WriteError>
+fn write_array<W>(writer: &mut W, val: &Vec<Value>) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {
@@ -119,7 +119,7 @@ where
     Ok(())
 }
 
-pub fn write_object<W>(writer: &mut W, val: &BTreeMap<KeyValue, Value>) -> Result<(), WriteError>
+fn write_object<W>(writer: &mut W, val: &BTreeMap<KeyValue, Value>) -> Result<(), WriteError>
 where
     W: ?Sized + Write,
 {

@@ -16,13 +16,6 @@ pub enum Integer {
     I128(i128),
 }
 
-pub fn to_integer<T>(value: T) -> Integer
-where
-    T: Into<Integer>,
-{
-    value.into()
-}
-
 impl From<u8> for Integer {
     fn from(value: u8) -> Self {
         Integer::U8(value)

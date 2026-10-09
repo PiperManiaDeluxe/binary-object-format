@@ -55,7 +55,7 @@ where
     }
 }
 
-pub fn read_integer<R>(reader: &mut R) -> Result<Integer, ReadError>
+fn read_integer<R>(reader: &mut R) -> Result<Integer, ReadError>
 where
     R: ?Sized + Read,
 {
@@ -118,7 +118,7 @@ where
     }
 }
 
-pub fn read_float<R>(reader: &mut R) -> Result<Float, ReadError>
+fn read_float<R>(reader: &mut R) -> Result<Float, ReadError>
 where
     R: ?Sized + Read,
 {
@@ -141,7 +141,7 @@ where
     }
 }
 
-pub fn read_string<R>(reader: &mut R) -> Result<String, ReadError>
+fn read_string<R>(reader: &mut R) -> Result<String, ReadError>
 where
     R: ?Sized + Read,
 {
@@ -156,7 +156,7 @@ where
     Ok(string)
 }
 
-pub fn read_array<R>(reader: &mut R) -> Result<Vec<Value>, ReadError>
+fn read_array<R>(reader: &mut R) -> Result<Vec<Value>, ReadError>
 where
     R: ?Sized + Read,
 {
@@ -175,7 +175,7 @@ where
     Ok(result)
 }
 
-pub fn read_object<R>(reader: &mut R) -> Result<BTreeMap<KeyValue, Value>, ReadError>
+fn read_object<R>(reader: &mut R) -> Result<BTreeMap<KeyValue, Value>, ReadError>
 where
     R: ?Sized + Read,
 {

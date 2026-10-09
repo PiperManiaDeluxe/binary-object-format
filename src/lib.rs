@@ -1,9 +1,8 @@
 #![allow(dead_code)]
 
-pub mod macros;
+mod macros;
 
 pub mod read;
-pub(crate) mod spec;
 pub mod write;
 
 mod float;
@@ -14,6 +13,8 @@ pub use integer::*;
 
 mod value;
 pub use value::*;
+
+pub(crate) mod spec;
 
 extern crate alloc;
 

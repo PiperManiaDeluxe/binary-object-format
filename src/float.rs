@@ -15,13 +15,6 @@ impl Float {
     }
 }
 
-pub fn to_float<T>(value: T) -> Float
-where
-    T: Into<Float>,
-{
-    value.into()
-}
-
 impl From<f32> for Float {
     fn from(value: f32) -> Self {
         Float::F32(value)

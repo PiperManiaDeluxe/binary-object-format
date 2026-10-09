@@ -14,12 +14,7 @@ pub enum Value {
     Object(BTreeMap<KeyValue, Value>),
 }
 
-pub fn to_value<T>(value: T) -> Value
-where
-    T: Into<Value>,
-{
-    value.into()
-}
+// #region From<Type>
 
 impl From<bool> for Value {
     fn from(value: bool) -> Self {
@@ -140,6 +135,8 @@ impl<T: Into<Value>> From<BTreeMap<KeyValue, T>> for Value {
     }
 }
 
+// #endregion
+
 /// Represents valid BOF values that can be used as [`Value::Object`] keys.
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub enum KeyValue {
@@ -149,15 +146,71 @@ pub enum KeyValue {
     String(String),
 }
 
+// #region From<Type>
+
 impl From<bool> for KeyValue {
     fn from(value: bool) -> Self {
         KeyValue::Bool(value)
     }
 }
 
+impl From<u8> for KeyValue {
+    fn from(value: u8) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<u16> for KeyValue {
+    fn from(value: u16) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<u32> for KeyValue {
+    fn from(value: u32) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<u64> for KeyValue {
+    fn from(value: u64) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<u128> for KeyValue {
+    fn from(value: u128) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<i8> for KeyValue {
+    fn from(value: i8) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<i16> for KeyValue {
+    fn from(value: i16) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<i32> for KeyValue {
+    fn from(value: i32) -> Self {
+        KeyValue::Integer(value.into())
+    }
+}
+
 impl From<i64> for KeyValue {
     fn from(value: i64) -> Self {
-        KeyValue::Integer(Integer::I64(value))
+        KeyValue::Integer(value.into())
+    }
+}
+
+impl From<i128> for KeyValue {
+    fn from(value: i128) -> Self {
+        KeyValue::Integer(value.into())
     }
 }
 
@@ -172,3 +225,5 @@ impl From<&str> for KeyValue {
         KeyValue::String(value.to_owned())
     }
 }
+
+// #endregion
